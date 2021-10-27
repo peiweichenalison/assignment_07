@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block header %}
+  <!-- Page Header-->
+  <header class="masthead" style="background-image: url({{ url_for('static', filename='assets/img/home-bg.jpg') }})">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>Couple Dating Map</h1>
+                    <span class="subheading">For Anniversaries</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}
+{% block content %}
+<!-- Main Content-->
+<div class="container">
+     <div class="row">
+         <div class="col">
+             <b>shopname</b>
+        </div>
+        <div class="col">
+            <b>link</b>
+        </div>
+     </div>
+    {% for row in  entries  %}
+    <div class="row">
+        <div class="col">
+                 {{ row["shopname"] }}
+        </div>
+        <div class="col">
+                 {{ row["link"] }}
+        </div>
+    </div><!-- end row -->
+    {% endfor %}
+</div><!-- end container -->
+<hr />
+{% endblock %}

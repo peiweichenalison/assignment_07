@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block header %}
+<!-- Page Header-->
+        <header class="masthead">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row" style="max-height: 330px; margin-top: -5%;">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <div class="site-heading">
+                            <h3>Users</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+{% endblock %}
+{% block content %}
+        <!-- Main Content-->
+       <div class="container">
+             <div class="row">
+                 <div class="col">
+                     <b>ID</b>
+                </div>
+                <div class="col">
+                    <b>User Name</b>
+                </div>
+                <div class="col">
+                    <b>Email</b>        
+                 </div>   
+             </div>
+            {% for row in  entries  %}
+            <div class="row">
+                <div class="col">
+                         {{ row["id"] }}
+                </div>
+                <div class="col">
+                         {{ row["username"] }}
+                </div>
+                <div class="col">
+                         {{ row["email"] }}
+                </div>   
+            </div><!-- end row -->
+            {% endfor %}
+       </div><!-- end container -->
+       <hr />
+{% endblock %}

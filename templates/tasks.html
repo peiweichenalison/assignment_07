@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block header %}
+<!-- Page Header-->
+        <header class="masthead">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row" style="max-height: 330px; margin-top: -5%;">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <div class="site-heading">
+                            <h3>Users</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+{% endblock %}
+{% block content %}
+        <!-- Main Content-->
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteKeeper - {{title}}</title>
+</head>
+<body>
+    <h1>Tasks</h1>
+
+    {% for tasks in to_do_tasks %}
+        <div class="to_do_tasks">
+            <h3>{{tasks.title}}</h3> 
+            <p>{{tasks.tasks_body}}</p>
+        </div>
+    {% endfor %}
+
+</body>
+</html>
+{% endblock %}
